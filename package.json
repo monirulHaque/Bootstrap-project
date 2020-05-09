@@ -24,6 +24,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.1",
+    "minimist": "^1.2.5",
     "popper.js": "^1.12.9"
   }
 }
