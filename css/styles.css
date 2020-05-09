@@ -1,0 +1,18 @@
+.jumbotron {
+    background-color: #3f6f9c;
+    color: ghostwhite;
+}
+.footer {
+    margin: 10px;
+    padding: 10px;
+    background-color: #9cb9d4;
+}
+.rowCustom {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.hist {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
