@@ -17,7 +17,7 @@
 
 <body>
     <!--Navigation bar-->
-    <nav class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top">
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -193,8 +193,7 @@
                                 data-toggle="tooltip" data-html="true"  title="Or Call us at <br><strong>+852 12345678</strong>"
                                 data-placement="bottom" href="#reserveform">Reserve Table</a> -->
 
-                            <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal"
-                                data-target="#reservationModal">Reserve Table</a>
+                            <a role="button" class="btn btn-block nav-link btn-warning" id="reservationButton">Reserve Table</a>
                         </div>
                     </form>
                 </div>
@@ -255,14 +254,17 @@
                             <span class="carousel-control-next-icon"></span>
                         </a>
                         <!--Carousel pasue-resume controller-->
-                        <div class="btn-grp" id="carouselButton">
+                        <!-- <div class="btn-grp" id="carouselButton">
                             <button class="btn btn-danger btn-sm" id="carousel-pause">
                                 <span class="fa fa-pause"></span>
                             </button>
                             <button class="btn btn-success btn-sm" id="carousel-play">
                                 <span class="fa fa-play"></span>
                             </button>
-                        </div>
+                        </div> -->
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span class="fa fa-pause"></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -433,7 +435,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script src="js/index.js"></script>
     
     <script>
         
@@ -442,11 +444,27 @@
             // $('[data-toggle="tooltip"]').tooltip();
             //carousel slide change interval
             $("#mycarousel").carousel( { interval: 2000 } );
-            $("#carousel-pause").click(function(){
-                $("#mycarousel").carousel('pause');
-            });
-            $("#carousel-play").click(function(){
-                $("#mycarousel").carousel('cycle');
+            // $("#carousel-pause").click(function(){
+            //     $("#mycarousel").carousel('pause');
+            // });
+            // $("#carousel-play").click(function(){
+            //     $("#mycarousel").carousel('cycle');
+            // });
+            $("#carouselButton").click(function(){
+                if($("#carouselButton").children("span").hasClass("fa-pause")) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass("fa-pause");
+                    $("#carouselButton").children("span").addClass("fa-play");
+                    $("#carouselButton").removeClass("btn-danger");
+                    $("#carouselButton").addClass("btn-success");
+                }
+                else {
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass("fa-play");
+                    $("#carouselButton").children("span").addClass("fa-pause");
+                    $("#carouselButton").removeClass("btn-success");
+                    $("#carouselButton").addClass("btn-danger");
+                }
             });
 
         });
