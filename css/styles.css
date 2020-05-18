@@ -49,3 +49,9 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+#carouselButton {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+}
