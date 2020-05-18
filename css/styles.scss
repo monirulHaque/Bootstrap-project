@@ -79,11 +79,12 @@ body{
 .modal-content {
     .modal-header {
         background-color: $background-dark;
-        color: $modal-text;
+        color: floralwhite;
     }
     .modal-body {
         background-color: $background-pale;
     }
-    
-
+    .button {
+        color: floralwhite
+    }
 }

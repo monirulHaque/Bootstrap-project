@@ -75,4 +75,8 @@ body {
 .modal-content .modal-body {
   background-color: #D1C4E9;
 }
+
+.modal-content .button {
+  color: floralwhite;
+}
 /*# sourceMappingURL=styles.css.map */
